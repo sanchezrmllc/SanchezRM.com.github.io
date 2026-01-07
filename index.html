@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 :root {
-  --gold: #d4af37;
-  --dark: #0b0b0b;
-  --gray: #1a1a1a;
+  --primary: #3A4554;
+  --dark: #1F2630;
+  --gold: #D4AF37;
+  --light: #f1f1f1;
 }
 
 * {
@@ -18,14 +19,14 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: var(--dark);
+  background: var(--primary);
   color: #eee;
   line-height: 1.6;
 }
 
 header {
   background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+    linear-gradient(rgba(31,38,48,.85), rgba(31,38,48,.85)),
     url('work1.jpg') center/cover no-repeat;
   padding: 120px 20px;
   text-align: center;
@@ -49,6 +50,7 @@ section {
   padding: 80px 20px;
   max-width: 1200px;
   margin: auto;
+  background: var(--primary);
 }
 
 h2 {
