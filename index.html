@@ -127,6 +127,24 @@ footer {
   font-size: 14px;
   color: #777;
 }
+  .footer-social {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: var(--gold);
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.footer-social a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
 </style>
 
 </head>
@@ -185,9 +203,16 @@ footer {
   </p>
 </section>
 
-<footer>
-  © 2026 Sanchez Repairs & Maintenance LLC. All Rights Reserved.
+  <footer>
+  <p>© 2026 Sanchez Repairs & Maintenance LLC. All Rights Reserved.</p>
+
+  <div class="footer-social">
+    <a href="https://instagram.com/YOURUSERNAME" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/@YOURUSERNAME" target="_blank">TikTok</a>
+    <a href="https://facebook.com/YOURPAGE" target="_blank">Facebook</a>
+  </div>
 </footer>
+
 <script>
   let index = 0;
   const slides = document.querySelector('.slides');
