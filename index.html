@@ -29,7 +29,7 @@ header {
     linear-gradient(rgba(31,38,48,.85), rgba(31,38,48,.85)),
     url('work1.jpg') center/cover no-repeat;
   padding: 120px 20px;
-  text-align: center;
+  text-align: center; 
 }
 
 header h1 {
@@ -44,6 +44,7 @@ header p {
   max-width: 800px;
   margin: auto;
   color: #ccc;
+  <button class="cta-btn" onclick="openForm()">Request an Estimate</button>
 }
 
 section {
@@ -145,6 +146,57 @@ footer {
   color: #fff;
   transform: translateY(-2px);
 }
+  .cta-btn {
+  margin-top: 30px;
+  padding: 14px 32px;
+  background: var(--gold);
+  border: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  z-index: 999;
+}
+
+.popup-content {
+  background: var(--dark);
+  max-width: 400px;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  border-top: 4px solid var(--gold);
+}
+
+.popup-content h3 {
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.popup-content input,
+.popup-content textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.popup-content button {
+  width: 100%;
+  background: var(--gold);
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
 </style>
 
 </head>
@@ -225,6 +277,29 @@ footer {
   setInterval(() => {
     moveSlide(1);
   }, 5000);
+</script>
+<div class="popup" id="contactForm">
+  <div class="popup-content">
+    <h3>Request an Estimate</h3>
+
+    <form action="mailto:Sanchez.r.mllc@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="Email" placeholder="Your Email" required>
+      <textarea name="Message" placeholder="Tell us about your project" required></textarea>
+
+      <button type="submit">Send Message</button>
+      <button type="button" onclick="closeForm()">Cancel</button>
+    </form>
+  </div>
+</div>
+<script>
+function openForm() {
+  document.getElementById('contactForm').style.display = 'block';
+}
+
+function closeForm() {
+  document.getElementById('contactForm').style.display = 'none';
+}
 </script>
 
 </body>
