@@ -272,6 +272,37 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+  .reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.review-card {
+  background: #1f2630;
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.review-stars {
+  color: var(--gold);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.review-name {
+  font-weight: bold;
+  color: var(--gold);
+}
+
 </style>
 
 </head>
@@ -366,6 +397,40 @@ and commercial projects with attention to detail and professional execution.
       Sanchez.r.mllc@gmail.com
     </a>
   </p>
+</section>
+
+  <section>
+  <h2>What Our Clients Say</h2>
+  <p>Trusted by homeowners and businesses across New York City and New Jersey.</p>
+
+  <div class="reviews">
+    <div class="review-card fade-up">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">
+        Sanchez Repairs & Maintenance LLC delivered excellent work. The project
+        was completed on time, and the quality exceeded expectations.
+      </div>
+      <div class="review-name">— Michael R.</div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">
+        Professional, reliable, and easy to work with. Communication was clear
+        throughout the entire process.
+      </div>
+      <div class="review-name">— Jessica L.</div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">
+        Great experience from start to finish. Fair pricing and high-quality
+        craftsmanship. Highly recommended.
+      </div>
+      <div class="review-name">— Daniel S.</div>
+    </div>
+  </div>
 </section>
 
   <footer>
