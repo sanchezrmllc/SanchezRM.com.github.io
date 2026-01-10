@@ -302,6 +302,22 @@ footer {
   font-weight: bold;
   color: var(--gold);
 }
+.review-btn {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.review-btn:hover {
+  background: #c9a24d; /* slightly darker gold on hover */
+  transform: translateY(-2px);
+}
 
 </style>
 
@@ -392,7 +408,13 @@ and commercial projects with attention to detail and professional execution.
   <section>
   <h2>What Our Clients Say</h2>
   <p>Trusted by homeowners and businesses across New York City and New Jersey.</p>
-
+    
+<div style="text-align:center; margin: 20px 0;">
+  <button class="review-btn" onclick="openReviewForm()">
+    Leave a Review
+  </button>
+</div>
+    
   <div class="reviews">
     <div class="review-card fade-up">
       <div class="review-stars">★★★★★</div>
@@ -539,9 +561,34 @@ const observer = new IntersectionObserver(entries => {
 }, {
   threshold: 0.2
 });
-
+  
 animatedItems.forEach(item => observer.observe(item));
 </script>
+  <script>
+function openReviewForm() {
+  document.getElementById('reviewModal').style.display = 'flex';
+}
+
+function closeReviewModal(e) {
+  if (!e || e.target.classList.contains('modal')) {
+    document.getElementById('reviewModal').style.display = 'none';
+  }
+}
+</script>
+  
+<div id="reviewModal" class="modal" onclick="closeReviewModal(event)">
+  <div class="modal-content">
+    <div class="close-modal" onclick="closeReviewModal()">✕</div>
+    <h2>Leave a Review</h2>
+    <form action="mailto:Sanchez.r.mllc@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="Email" placeholder="Your Email" required>
+      <textarea name="Review" placeholder="Write your review here..." required></textarea>
+      <button type="submit">Submit Review</button>
+      <button type="button" onclick="closeReviewModal()">Cancel</button>
+    </form>
+  </div>
+</div>
 
 </body>
 </html>
