@@ -262,6 +262,15 @@ footer {
   font-size: 28px;
   cursor: pointer;
   text-align: right;
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 
@@ -452,6 +461,21 @@ function closeModal(e) {
     document.getElementById('projectModal').style.display = 'none';
   }
 }
+</script>
+<script>
+const animatedItems = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+animatedItems.forEach(item => observer.observe(item));
 </script>
 
 </body>
