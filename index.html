@@ -362,17 +362,18 @@ footer {
 @media (max-width: 768px) {
   .who-we-are {
     padding: 100px 15px;
+  }
 .categories {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 clean columns on desktop */
   gap: 25px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
-  .category-card img {
+ .category-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;   /* ⬅ THIS IS THE MAGIC */
+  height: 0;
+  padding-top: 66.66%; /* 3:2 aspect ratio — adjust as needed */
   object-fit: cover;
-  display: block;
+  object-position: center;
 }
 @media (max-width: 1024px) {
   .categories {
